@@ -1,0 +1,29 @@
+同一台电脑关于多个SSH KEY管理
+
+有两个账户:aaa(github.com)，bbb(向git.oschina.net)
+
+1、在～/.ssh目录下，使用ssh-keygen -t rsa -C "aaa@yeah.net"生成公钥秘钥：
+     id_rsa_aaa  私钥 和 id_rsa_aaa.pub 公钥
+
+2、在～/.ssh目录下，使用ssh-keygen -t rsa -C "bbb@yeah.net"生成公钥秘钥：
+     id_rsa_bbb  私钥 和 id_rsa_bbb.pub 公钥
+
+3、在～/.ssh目录下创建config文件，进行相应配置：
+   #第一个git项目账号
+   Host first
+   HostName github.com
+   User A
+   IdentityFile ~/.ssh/id_rsa_aaa
+ 
+   #第二个osagit项目账号
+   Host second
+   HostName git.oschina.net
+   User B
+   IdentityFile ~/.ssh/id_rsa_bbb
+
+4、分别登录Github和git.oschina, 添加 ssh,将id_rsa_aaa.pub和id_rsa_bbb.pub 分别添加到Github和git.oschina的SSH keys中。
+
+5、测试是否成功：$ ssh -T git@github.com
+                 Hi yourname! You've successfully authenticated, but GitHub does not                        provide shell access.
+                 $ ssh -T git@git.oschina.net
+                 Welcome to Git@OSC, yourname! 
