@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 Git multiple account login settings
  
@@ -18,3 +19,6 @@ Step 3:  Test the connection£º
      Hi yourname! You've successfully authenticated, but GitHub does not                        provide shell access.
      $ ssh -T git@git.oschina.net
      Welcome to Git@OSC, yourname! 
+=======
+cmingwhu
+>>>>>>> d4fc3066bf37b8f08b617835135e63d4877ed699
