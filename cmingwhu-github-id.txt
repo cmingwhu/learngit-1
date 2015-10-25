@@ -1,7 +1,4 @@
 
-
-
-
 Git multiple account login settings
  
 Step 1: Generate two new SSH key
