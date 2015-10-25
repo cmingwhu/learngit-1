@@ -1,0 +1,19 @@
+Git multiple account login settings
+ 
+Step 1: Generate two new SSH key
+
+under the dictionary ¡«/.ssh  ssh-keygen -t rsa -C "aaa@yeah.net" ,Generate a new SSH key£º
+     id_rsa_aaa, id_rsa_aaa.pub 
+
+nder the dictionary ¡«/.ssh  ssh-keygen -t rsa -C "aaa@yeah.net", Generate other new SSH key£º
+     id_rsa_bbb, id_rsa_bbb.pub 
+
+Step 2: Add your key to the ssh-agent
+	 ssh-agent -s
+     # Agent pid 59566
+	 
+Step 3:  Test the connection£º
+     $ ssh -T git@github.com
+     Hi yourname! You've successfully authenticated, but GitHub does not                        provide shell access.
+     $ ssh -T git@git.oschina.net
+     Welcome to Git@OSC, yourname! 
