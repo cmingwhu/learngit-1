@@ -17,3 +17,5 @@ Step 3:  Test the connection£º
      Hi yourname! You've successfully authenticated, but GitHub does not                        provide shell access.
      $ ssh -T git@git.oschina.net
      Welcome to Git@OSC, yourname! 
+
+Git:10-25
